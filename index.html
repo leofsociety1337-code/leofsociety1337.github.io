@@ -120,6 +120,7 @@
             color: #080;
             font-size: 12px;
             margin-bottom: 10px;
+            display: none; /* HIDDEN */
         }
         
         .status {
@@ -386,8 +387,8 @@
                 <h2>// ENCRYPTED TRANSMISSION // SECURE CHANNEL ACTIVE</h2>
             </div>
             
-            <div class="timestamp">
-                [<span id="datetime"></span>] - ENCRYPTION: AES-256 - CHANNEL: SECURE
+            <div class="timestamp" style="display: none;">
+                <!-- Date/time removed -->
             </div>
             
             <div class="message-box">
@@ -414,7 +415,7 @@ We penetrated their primary and backup systems. Found 4 operatives
 working in coordination. Infrastructure located in 3 jurisdictions.
 
 <strong>[+] DATA RECOVERY & NEUTRALIZATION</strong>
-- Located your personal data archives (images, emails, accounts)
+- Located your personal data archives (emails, accounts)
 - Recovered college LMS database backups they forced you to extract
 - Found dark web credential dumps containing your aliases
 - <span class="encrypted">ALL DATA HAS BEEN ENCRYPTED WITH OUR CUSTOM RANSOMWARE</span>
@@ -486,7 +487,7 @@ We are really sorry for anything who you are and how now looking the people to y
             <div class="metadata-grid">
                 <div class="meta-item">
                     <div class="meta-label">TO:</div>
-                    <div class="meta-value">COLLEGE ADMINISTRATION & BOARD</div>
+                    <div class="meta-value">COLLEGE ADMINISTRATION</div>
                 </div>
                 <div class="meta-item">
                     <div class="meta-label">FROM:</div>
@@ -494,7 +495,7 @@ We are really sorry for anything who you are and how now looking the people to y
                 </div>
                 <div class="meta-item">
                     <div class="meta-label">DATE:</div>
-                    <div class="meta-value" id="formalDate"></div>
+                    <div class="meta-value">ENCRYPTED TRANSMISSION</div> <!-- Changed -->
                 </div>
                 <div class="meta-item">
                     <div class="meta-label">PRIORITY:</div>
@@ -524,7 +525,7 @@ We are really sorry for anything who you are and how now looking the people to y
                     </div>
                     
                     <div class="point">
-                        <span class="highlight">3. THREAT GROUP IDENTIFIED:</span> We have neutralized the specific 4-member cell responsible. This group has victimized <span class="critical">17+ other security researchers</span> using identical methods over 8 months.
+                        <span class="highlight">3. THREAT GROUP IDENTIFIED:</span> We have neutralized the specific 4-member cell responsible. This group has victimized <span class="critical">17+ other security researchers</span> using identical methods.
                     </div>
                     
                     <div class="point">
@@ -591,8 +592,8 @@ We are really sorry for anything who you are and how now looking the people to y
                         His immediate notification to our team demonstrates his integrity and commitment to ethical conduct.
                     </div>
                 </div>
-            </div>
-            
+</div>
+
             <div class="section">
                 <div class="section-title">SECURITY STATUS CONFIRMATION</div>
                 <div class="content">
@@ -674,20 +675,6 @@ We are really sorry for anything who you are and how now looking the people to y
             });
         });
         
-        // Set current date/time for page 1
-        const now = new Date();
-        const datetime = now.toUTCString().replace('GMT', 'ZULU');
-        document.getElementById('datetime').textContent = datetime;
-        
-        // Set formatted date for page 2
-        const options = { 
-            weekday: 'long', 
-            year: 'numeric', 
-            month: 'long', 
-            day: 'numeric' 
-        };
-        document.getElementById('formalDate').textContent = now.toLocaleDateString('en-US', options);
-        
         // Matrix background effect
         const matrixBg = document.getElementById('matrixBg');
         function generateMatrix() {
@@ -713,7 +700,7 @@ We are really sorry for anything who you are and how now looking the people to y
         const messages = [
             ">> TRANSMISSION DECRYPTED... WELCOME BACK, LEADER...",
             ">> ANALYZING SECURITY STATUS... ALL SYSTEMS SECURE...",
-            ">> AWAITING LEADER CONFIRMATION... 24H WINDOW ACTIVE..."
+            ">> AWAITING LEADER CONFIRMATION..."
         ];
         
         let msgIndex = 0;
@@ -793,13 +780,6 @@ We are really sorry for anything who you are and how now looking the people to y
                 }, 2100);
             }
         }, 3000);
-        
-        // Auto-switch pages every 30 seconds for demo
-        let currentPage = 0;
-        setInterval(() => {
-            currentPage = (currentPage + 1) % 2;
-            navButtons[currentPage].click();
-        }, 30000);
     </script>
 </body>
 </html>
